@@ -6,7 +6,23 @@
 
 package com.soesec.ciphers;
 
+import com.soesec.factory.ICipher;
+import com.soesec.factory.InfoProvider;
 
-public class Vigenère {
 
+public class Vigenère implements ICipher{
+
+    @Override
+    public String encode(String plain) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public String decode(String plain) {
+        throw new UnsupportedOperationException();
+    }
+    @Override
+    public ICipher Init(InfoProvider info) {
+        return this;
+    }
 }
