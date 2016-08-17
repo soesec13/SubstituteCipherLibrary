@@ -10,20 +10,21 @@ import com.soesec.ciphers.*;
 
 
 public class CipherFactory {
-    public static ICipher CreateCipher(CipherEnum type)
+    public static ICipher CreateCipher(InfoProvider info)
     {
-        switch (type)
+        switch (info.getType())
         {
             case Atbash:
-                return new Atbash();
+                return new Atbash().Init(info);
             case A1Z26:
-                return new A1Z26();
+                return new A1Z26().Init(info);
             case Ceaser:
-                return new Ceaser();
+                return new Ceaser().Init(info);
             case Vigenere:
-                return new Vigenère();
+                return new Vigenère().Init(info);
             default:
                 return null;
         }
     }
+    
 }

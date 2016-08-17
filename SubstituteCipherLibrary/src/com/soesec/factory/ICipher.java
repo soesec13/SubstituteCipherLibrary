@@ -11,4 +11,7 @@ package com.soesec.factory;
  */
 public interface ICipher {
     
+    public ICipher Init(InfoProvider info);
+    public String encode(String plain);
+    public String decode(String plain);
 }
