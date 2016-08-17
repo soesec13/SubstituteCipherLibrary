@@ -10,5 +10,5 @@ package com.soesec.factory;
  * @author sebi
  */
 public enum CipherEnum {
-    
+    A1Z26,Atbash,Ceaser,Vigenere
 }

@@ -6,7 +6,24 @@
 
 package com.soesec.factory;
 
+import com.soesec.ciphers.*;
+
 
 public class CipherFactory {
-
+    public ICipher CreateCipher(CipherEnum type)
+    {
+        switch (type)
+        {
+            case Atbash:
+                return new Atbash();
+            case A1Z26:
+                return new A1Z26();
+            case Ceaser:
+                return new Ceaser();
+            case Vigenere:
+                return new Vigenère();
+            default:
+                return null;
+        }
+    }
 }
