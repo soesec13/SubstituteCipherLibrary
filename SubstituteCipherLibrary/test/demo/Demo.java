@@ -4,12 +4,11 @@
  * and open the template in the editor.
  */
 
-package testing;
+package demo;
 
 import com.soesec.factory.CipherFactory;
 import com.soesec.factory.ICipher;
 import com.soesec.factory.InfoProvider;
-import java.io.Console;
 
 
 public class Demo {
@@ -28,6 +27,11 @@ public class Demo {
         p = InfoProvider.a1z26Info();
         cipher = CipherFactory.CreateCipher(p);
         basic = "VIVAN LOS PATOS DE LA PISCINA.";
+        Do(cipher, basic);
+        
+        p = InfoProvider.vigenere("WIDDLE");
+        cipher = CipherFactory.CreateCipher(p);
+        basic = "WELCOME BACK";
         Do(cipher, basic);
     }
     

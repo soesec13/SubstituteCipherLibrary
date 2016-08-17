@@ -11,6 +11,7 @@ public class InfoProvider {
     private CipherEnum type;
     private int rightShift;
     private char seperator;
+    private String key;
     public static InfoProvider ceaserInfo()
     {
         InfoProvider ceaser = new InfoProvider();
@@ -31,6 +32,14 @@ public class InfoProvider {
         a1z26.seperator = '-';
         return a1z26;
     }
+    
+    public static InfoProvider vigenere(String key)
+    {
+        InfoProvider vigenere = new InfoProvider();
+        vigenere.type = CipherEnum.Vigenere;
+        vigenere.key = key;
+        return vigenere;
+    }
 
     public CipherEnum getType() {
         return type;
@@ -42,6 +51,10 @@ public class InfoProvider {
     public char getSperator()
     {
         return seperator;
+    }
+
+    public String getKey() {
+        return key;
     }
     
     
