@@ -10,7 +10,7 @@ import com.soesec.ciphers.*;
 
 
 public class CipherFactory {
-    public ICipher CreateCipher(CipherEnum type)
+    public static ICipher CreateCipher(CipherEnum type)
     {
         switch (type)
         {
