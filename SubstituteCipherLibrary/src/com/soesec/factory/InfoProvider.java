@@ -12,6 +12,7 @@ public class InfoProvider {
     private int rightShift;
     private char seperator;
     private String key;
+    private boolean reverse;
     public static InfoProvider ceaserInfo()
     {
         InfoProvider ceaser = new InfoProvider();
@@ -40,7 +41,6 @@ public class InfoProvider {
         vigenere.key = key;
         return vigenere;
     }
-
     public CipherEnum getType() {
         return type;
     }
