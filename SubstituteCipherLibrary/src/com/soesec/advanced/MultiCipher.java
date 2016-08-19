@@ -9,6 +9,7 @@ package com.soesec.advanced;
 import com.soesec.factory.ICipher;
 import com.soesec.factory.InfoProvider;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -28,6 +29,10 @@ public class MultiCipher implements ICipher{
     public MultiCipher(List<ICipher> ciphers)
     {
         this.ciphers = ciphers;
+    }
+    public MultiCipher(ICipher... args)
+    {
+        this.ciphers = Arrays.asList(args);
     }
     public MultiCipher(List<ICipher> ciphers,boolean reverse)
     {

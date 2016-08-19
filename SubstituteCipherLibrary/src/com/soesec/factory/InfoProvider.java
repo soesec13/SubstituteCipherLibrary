@@ -10,9 +10,10 @@ package com.soesec.factory;
 public class InfoProvider {
     private CipherEnum type;
     private int rightShift;
-    private char seperator;
+    private char letterSeperator;
+    private String wordSeperator;
+    private String otherCharacters;
     private String key;
-    private boolean reverse;
     public static InfoProvider ceaserInfo()
     {
         InfoProvider ceaser = new InfoProvider();
@@ -30,17 +31,20 @@ public class InfoProvider {
     {
         InfoProvider a1z26 = new InfoProvider();
         a1z26.type = CipherEnum.A1Z26;
-        a1z26.seperator = '-';
+        a1z26.letterSeperator = '-';
+        a1z26.wordSeperator = "[ :\n]";
+        a1z26.otherCharacters = "'";
         return a1z26;
     }
     
-    public static InfoProvider vigenere(String key)
+    public static InfoProvider vigenéreInfo(String key)
     {
         InfoProvider vigenere = new InfoProvider();
         vigenere.type = CipherEnum.Vigenere;
         vigenere.key = key;
         return vigenere;
     }
+    
     public CipherEnum getType() {
         return type;
     }
@@ -48,9 +52,17 @@ public class InfoProvider {
     public int getRightShift() {
         return rightShift;
     }
-    public char getSperator()
+    public char getLetterSeperator()
     {
-        return seperator;
+        return letterSeperator;
+    }
+
+    public String getOtherCharacters() {
+        return otherCharacters;
+    }
+
+    public String getWordSeperator() {
+        return wordSeperator;
     }
 
     public String getKey() {
