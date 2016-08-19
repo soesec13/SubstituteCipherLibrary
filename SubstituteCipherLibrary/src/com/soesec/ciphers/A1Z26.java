@@ -9,6 +9,7 @@ package com.soesec.ciphers;
 import com.soesec.factory.ICipher;
 import com.soesec.factory.InfoProvider;
 import com.soesec.util.Alphabet;
+import com.soesec.util.StringUtils;
 
 
 public class A1Z26 implements ICipher{
@@ -16,7 +17,7 @@ public class A1Z26 implements ICipher{
     @Override
     public String encode(String plain) {
         String encrypted = "";
-        char[] array = plain.replace(""+info.getSperator(), "").toUpperCase().toCharArray();
+        char[] array = plain.replace(""+info.getLetterSeperator(), "").toUpperCase().toCharArray();
         for(int i = 0;i<array.length-1;i++)
         {
             char letter = array[i];
@@ -35,29 +36,53 @@ public class A1Z26 implements ICipher{
     @Override
     public String decode(String plain) {
         String decrypted = "";
-        String[] words = plain.split(" ");
+        String[] words = plain.split(info.getWordSeperator());
         for(int i = 0;i<words.length;i++)
         {
             String word = words[i];
-            String decoded = decodeWord(word, ""+info.getSperator());
+            String decoded = decodeWord(word, ""+info.getLetterSeperator(), info.getOtherCharacters());
             decrypted += decoded + ((i<words.length-1)?" ":"");
         }
         return decrypted;
     }
-    private String decodeWord(String encoded,String seperator)
+    private static String decodeWord(String encoded,String letterSperator, String otherChars)
     {
         String word="";
-        for(String letter : encoded.split(seperator))
+        for(String letter : encoded.split(letterSperator))
         {
-            try
+            if(StringUtils.containsAny(letter, otherChars))
             {
-                word+=Alphabet.At(Integer.parseInt(""+letter)-1);
-            }catch(Exception e)
-            {
-                word += letter;
+                String currentLetter="";
+                for(char c : letter.toCharArray())
+                {
+                    if(Character.isDigit(c))
+                    {
+                        currentLetter += c;
+                    }
+                    else
+                    {
+                        word += TryGetLetterAt(currentLetter);
+                        word += c;
+                        currentLetter = "";
+                    }
+                }
+                if(!currentLetter.isEmpty())
+                {
+                    word += TryGetLetterAt(currentLetter);
+                }
+                continue;
             }
+            word += TryGetLetterAt(letter);
         }
         return word;
+    }
+
+    private static String TryGetLetterAt(String pos) {
+        try {
+            return "" + Alphabet.At(Integer.parseInt("" + pos) - 1);
+        } catch (Exception e) {
+            return pos;
+        }
     }
 
     @Override
