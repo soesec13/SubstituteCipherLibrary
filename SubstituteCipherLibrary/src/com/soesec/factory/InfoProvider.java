@@ -33,7 +33,7 @@ public class InfoProvider {
         a1z26.type = CipherEnum.A1Z26;
         a1z26.letterSeperator = '-';
         a1z26.wordSeperator = "[ :\n]";
-        a1z26.otherCharacters = "'";
+        a1z26.otherCharacters = "'.";
         return a1z26;
     }
     

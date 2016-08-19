@@ -18,7 +18,7 @@ public class A1Z26 implements ICipher{
     public String encode(String plain) {
         String encrypted = "";
         char[] array = plain.replace(""+info.getLetterSeperator(), "").toUpperCase().toCharArray();
-        for(int i = 0;i<array.length-1;i++)
+        for(int i = 0;i<array.length;i++)
         {
             char letter = array[i];
             int index = Alphabet.IndexOf(letter);
@@ -68,7 +68,7 @@ public class A1Z26 implements ICipher{
                 }
                 if(!currentLetter.isEmpty())
                 {
-                    word += TryGetLetterAt(currentLetter);
+                    word += Character.isDigit(currentLetter.charAt(0))?TryGetLetterAt(currentLetter):currentLetter;
                 }
                 continue;
             }
