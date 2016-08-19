@@ -19,7 +19,7 @@ import java.util.List;
 public class WordListAccess {
     private String[] words;
     private final String path = "src\\com\\soesec\\data\\words.txt";
-    public static final String seperators = "[\n:,. !]";
+    public static final String wordSeperators = "[\n:,. !']";
     private WordListAccess() {
         try 
         {
@@ -48,7 +48,7 @@ public class WordListAccess {
     
     public boolean containsAWord(String sentence)
     {
-        String[] words = sentence.split(seperators);
+        String[] words = sentence.split(wordSeperators);
         for(String word : words)
         {
            if(isAWord(word))
@@ -60,7 +60,7 @@ public class WordListAccess {
     }
     public double percentageOfWords(String sentence)
     {
-        String[] words = sentence.split(seperators);
+        String[] words = sentence.split(wordSeperators);
         int emptyWords= 0;
         int wordCount=0;
         for(String word : words)
