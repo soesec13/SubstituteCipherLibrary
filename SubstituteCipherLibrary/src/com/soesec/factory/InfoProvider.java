@@ -39,10 +39,10 @@ public class InfoProvider {
     
     public static InfoProvider vigenéreInfo(String key)
     {
-        InfoProvider vigenere = new InfoProvider();
-        vigenere.type = CipherEnum.Vigenere;
-        vigenere.key = key;
-        return vigenere;
+        InfoProvider vigenére = new InfoProvider();
+        vigenére.type = CipherEnum.Vigenere;
+        vigenére.key = key;
+        return vigenére;
     }
     
     public CipherEnum getType() {
