@@ -38,11 +38,13 @@ public class Demo {
     public static void Do(ICipher cipher, String basic)
     {
         String encoded = cipher.encode(basic);
-        String decode = cipher.decode(encoded);
-        System.out.println("Algorithm: "+cipher.getClass());
+        String decoded = cipher.decode(encoded);
+        System.out.println("------------------------------------------------------------");
+        System.out.println("Algorithm: "+cipher.getClass().getSimpleName());
         System.out.println("Basic: "+basic);
         System.out.println("Encoded: " +encoded);
-        System.out.println("Decoded: " +decode);
+        System.out.println("Decoded: " +decoded);
+        System.out.println("Worked? " + (decoded.equals(basic) ? "Yes":"No"));
     }
 
 }
