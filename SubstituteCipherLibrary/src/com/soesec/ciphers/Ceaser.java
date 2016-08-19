@@ -41,7 +41,12 @@ public class Ceaser implements ICipher{
                 decrypted+=letter;
                 continue;
             }
-            int i = (index-info.getRightShift()) % 26;
+            int i = (index-info.getRightShift()) ;
+            if(i < 0)
+            {
+                i = 26+i;
+            }
+            i = i % 26;
             decrypted += Alphabet.At(i);
         }
         return decrypted;
