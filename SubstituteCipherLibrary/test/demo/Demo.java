@@ -29,7 +29,7 @@ public class Demo {
         basic = "VIVAN LOS PATOS DE LA PISCINA.";
         Do(cipher, basic);
         
-        p = InfoProvider.vigenere("WIDDLE");
+        p = InfoProvider.vigenéreInfo("WIDDLE");
         cipher = CipherFactory.CreateCipher(p);
         basic = "WELCOME BACK";
         Do(cipher, basic);
