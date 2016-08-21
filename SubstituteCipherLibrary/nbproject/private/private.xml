@@ -5,8 +5,10 @@
         <group>
             <file>file:/C:/Users/sebas/Documents/NetBeansProjects/Git_Projects/SubstituteCipherLibrary/SubstituteCipherLibrary/src/com/soesec/ciphers/A1Z26.java</file>
             <file>file:/C:/Users/sebas/Documents/NetBeansProjects/Git_Projects/SubstituteCipherLibrary/SubstituteCipherLibrary/src/com/soesec/advanced/MultiCipher.java</file>
+            <file>file:/C:/Users/sebas/Documents/NetBeansProjects/Git_Projects/SubstituteCipherLibrary/SubstituteCipherLibrary/src/com/soesec/util/StringUtils.java</file>
             <file>file:/C:/Users/sebas/Documents/NetBeansProjects/Git_Projects/SubstituteCipherLibrary/SubstituteCipherLibrary/test/demo/WordAccessDemo.java</file>
             <file>file:/C:/Users/sebas/Documents/NetBeansProjects/Git_Projects/SubstituteCipherLibrary/SubstituteCipherLibrary/src/com/soesec/util/Alphabet.java</file>
+            <file>file:/C:/Users/sebas/Documents/NetBeansProjects/Git_Projects/SubstituteCipherLibrary/SubstituteCipherLibrary/test/demo/test.java</file>
             <file>file:/C:/Users/sebas/Documents/NetBeansProjects/Git_Projects/SubstituteCipherLibrary/SubstituteCipherLibrary/src/com/soesec/ciphers/Vigenère.java</file>
             <file>file:/C:/Users/sebas/Documents/NetBeansProjects/Git_Projects/SubstituteCipherLibrary/SubstituteCipherLibrary/src/com/soesec/ciphers/Atbash.java</file>
             <file>file:/C:/Users/sebas/Documents/NetBeansProjects/Git_Projects/SubstituteCipherLibrary/SubstituteCipherLibrary/src/com/soesec/factory/CipherEnum.java</file>

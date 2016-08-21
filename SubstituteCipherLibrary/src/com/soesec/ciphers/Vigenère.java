@@ -17,7 +17,7 @@ public class Vigenère implements ICipher{
     public String encode(String plain) {
         String res = "";
         plain = plain.toUpperCase();
-        String key = info.getKey();
+        String key = cleanKey(info.getKey());
         for(int i = 0,j=0;i<plain.length();i++)
         {
             char letter = plain.charAt(i);
@@ -40,7 +40,7 @@ public class Vigenère implements ICipher{
     public String decode(String plain) {
         String res = "";
         plain = plain.toUpperCase();
-        String key = info.getKey();
+        String key = cleanKey(info.getKey());
         for(int i = 0,j=0;i<plain.length();i++)
         {
             char letter = plain.charAt(i);
@@ -60,6 +60,18 @@ public class Vigenère implements ICipher{
             j = ++j % key.length();
         }
         return res;
+    }
+    private static String cleanKey(String key)
+    {
+        StringBuilder cleanedKey = new StringBuilder();
+        for(char c : key.toCharArray())
+        {
+            if(Character.isAlphabetic(c))
+            {
+                cleanedKey.append(c);
+            }
+        }
+        return cleanedKey.toString().toUpperCase();
     }
     @Override
     public ICipher Init(InfoProvider info) {
