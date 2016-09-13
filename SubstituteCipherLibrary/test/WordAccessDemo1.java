@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-package demo;
+
 
 import com.soesec.util.WordListAccess;
 
 
-public class WordAccessDemo {
+public class WordAccessDemo1 {
 
     public static void main(String[] args) {
         WordListAccess access = WordListAccess.getInstance();

@@ -4,14 +4,14 @@
  * and open the template in the editor.
  */
 
-package demo;
+package CipherDemo;
 
 import com.soesec.factory.CipherFactory;
 import com.soesec.factory.ICipher;
 import com.soesec.factory.InfoProvider;
 
 
-public class Demo {
+public class Demo1 {
 
     public static void main(String[] args) {
         InfoProvider p = InfoProvider.ceaserInfo();
